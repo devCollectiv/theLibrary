@@ -2,10 +2,9 @@
 A Central repository to start building components to re-use in a modular fashion in each other's projects. 
 
 ## Shared Resources:
-
-[Shared Projects Doc](https://docs.google.com/document/d/1bI4gOftEYXE9DX6TvLxKJazUx68ZZZHiH7vTPy3Gp-4/edit "Google Drive") - Working Projects Directory
-[Netlify Drop](https://app.netlify.com/drop "Netlify Drop") - Build your project, drag/drop, hosted!
-[NextJS Boilerplates & Resources](https://github.com/unicodeveloper/awesome-nextjs#boilerplates "Next.js Resources")
+- [Shared Projects Doc](https://docs.google.com/document/d/1bI4gOftEYXE9DX6TvLxKJazUx68ZZZHiH7vTPy3Gp-4/edit "Google Drive") - Working Projects Directory
+- [Netlify Drop](https://app.netlify.com/drop "Netlify Drop") - Build your project, drag/drop, hosted!
+- [NextJS Boilerplates & Resources](https://github.com/unicodeveloper/awesome-nextjs#boilerplates "Next.js Resources")
 
 ---
 ### Kiel
@@ -20,9 +19,9 @@ A Central repository to start building components to re-use in a modular fashion
 - IDE: `vsCode, sublime text, `
 - CLI: `iTerm (os/linux), conEMU (windows)`
 - Browser Tools:
-    - Chrome:  `AJAX Debugger, Checkbot, ColorZilla, Keyframes, Quick Javascript Switcher, React Developer Tools, Redux DevTools, SEO Tool Extension, Wappalyzer, `
-    - Firefox: 
-    - Edge: 
+  - Chrome:  `AJAX Debugger, Checkbot, ColorZilla, Keyframes, Quick Javascript Switcher, React Developer Tools, Redux DevTools, SEO Tool Extension, Wappalyzer, `
+  - Firefox: 
+  - Edge: 
 #### Favorite Packages
 __Back End__
 - Framework: __`react`__`, (react-router, react-router-dom, react-devtools, react-dom, connected-react-router, prop-types);`  __`redux`__`, ( react-redux, react-router-redux, redux-devtools, redux-saga, react-redux-firebase?;` __`next`__`, (next-redux-saga, next-redux-wrapper) `
