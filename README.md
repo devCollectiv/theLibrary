@@ -2,6 +2,7 @@
 A Central repository to start building components to re-use in a modular fashion in each other's projects. 
 
 ## Shared Resources:
+- [Skype Conference](https://meet.perkinswill.com/kiel.byrne/3BYDYON3 "Virtual Conf Room")
 - [Shared Projects Doc](https://docs.google.com/document/d/1bI4gOftEYXE9DX6TvLxKJazUx68ZZZHiH7vTPy3Gp-4/edit "Google Drive") - Working Projects Directory
 - [Netlify Drop](https://app.netlify.com/drop "Netlify Drop") - Build your project, drag/drop, hosted!
 - [NextJS Boilerplates & Resources](https://github.com/unicodeveloper/awesome-nextjs#boilerplates "Next.js Resources")
