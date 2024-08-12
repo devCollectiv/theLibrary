@@ -8,11 +8,15 @@ const config = {
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
+    '@chakra-ui/storybook-addon'
   ],
   framework: {
     name: "@storybook/react-webpack5",
     options: {},
   },
   staticDirs: ["..\\public"],
+  features: {
+    emotionalAlias: false
+  }
 };
 export default config;
