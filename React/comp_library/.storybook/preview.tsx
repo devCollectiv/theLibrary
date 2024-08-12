@@ -1,12 +1,11 @@
 /** @type { import('@storybook/react').Preview } */
-
-// const theme = require('../pathToThem')
+import { theme } from "@chakra-ui/react";
 
 const preview = {
   parameters: {
-    // chakra: {
-    //   theme,
-    // },
+    chakra: {
+      theme,
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
