@@ -19,7 +19,9 @@ const config = {
         },
         loaderOptions: {
           prettierConfig: { printWidth: 100, singleQuote: false },
+          injectStoryParameters: false,
         },
+      }
     }
   ],
   framework: {
