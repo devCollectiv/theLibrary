@@ -47,7 +47,8 @@ const SpinningPolygon: React.FC<SpinningPolygonProps> = ({ polygonSides, color, 
   const getFill = (): string => {
     if (Array.isArray(color)) {
       if (color.length === 1) return color[0];
-      return `url(#gradient-filled)`;
+      const gradientId = `gradient-${polygonSides}`;
+      return `url(#${gradientId})`;
     }
     return color as string;
   };
@@ -57,7 +58,7 @@ const SpinningPolygon: React.FC<SpinningPolygonProps> = ({ polygonSides, color, 
       <svg width="100%" height="100%" viewBox={`0 0 ${size} ${size}`}>
         {Array.isArray(color) && color.length > 1 && (
           <defs>
-            <linearGradient id={`gradient-filled}`}>
+            <linearGradient id={`gradient-${polygonSides}`}>
               {color.map((c, index) => (
                 <stop key={index} offset={`${(index / (color.length - 1)) * 100}%`} stopColor={c} />
               ))}
