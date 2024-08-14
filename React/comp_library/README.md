@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# devCollectiv Component Library
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/BADGE_ID/deploy-status)](https://app.netlify.com/sites/devkollektivlib/deploys)
 
-## Available Scripts
+Welcome to the devCollectiv component library. This collection of React components, built with Chakra UI, is designed to streamline our development process and maintain consistency across our projects.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Explore Components**: Discover our suite of custom and Chakra UI-based components, tailored for devCollectiv's needs.
+- **Theming**: Learn how to use and customize our theme to maintain a consistent look across your projects.
+- **Testing**: Understand our testing strategies and how to write tests for your components.
+- **Documentation**: Write clear, consistent documentation for your components to improve team collaboration.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technology Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Frontend
+- **React** - Popular JavaScript framework used for building out component-driven UI
+- **TypeScript** - Language providing static typing for application logic
+- **Chakra UI** - Implements component library for accessible UI patterns
+- **Storybook** - Development environment for UI components
 
-### `npm test`
+### Tooling
+- **ESLint** - Linting utility ensuring code quality and best practices
+- **Prettier** - Automatic code formatting for consistency
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Infrastructure
+- **Netlify** - Hosting provider with optimized deployment from Git
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To begin using the devCollectiv component library in your project, follow these steps:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Install the package via npm or yarn
+2. Import the devCollectiv theme and wrap your app with the ChakraProvider
+3. Start using our components in your React application
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributing
 
-### `npm run eject`
+We welcome contributions to the devCollectiv component library. Whether you're fixing bugs, adding new features, or improving documentation, your input is valuable.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+[Contribute on GitHub](https://github.com/devCollectiv/theLibrary)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Support
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+If you need help or have questions about using the component library, reach out to our team:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+[Join our Discord](https://discord.gg/devCollectiv)
 
-## Learn More
+## License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[MIT License](LICENSE)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Built with ❤️ by devCollectiv
