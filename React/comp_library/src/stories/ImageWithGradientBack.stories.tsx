@@ -9,7 +9,7 @@ export default {
   component: ImageWIthGradientBacker,
 } as Meta;
 
-const Template: StoryFn<ImageWithGradientBackerProps> = (args: any) => (
+const Template: StoryFn<ImageWithGradientBackerProps> = (args) => (
   <ImageWIthGradientBacker {...args} />
 );
 

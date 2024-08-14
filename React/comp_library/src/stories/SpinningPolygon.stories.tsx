@@ -1,21 +1,38 @@
-import SpinningPolygon from "../components/SpinningPolygon";
+import { Box } from '@chakra-ui/react';
+import { Meta, StoryFn } from '@storybook/react';
+import React from 'react';
+import SpinningPolygon, { SpinningPolygonProps } from '../components/SpinningPolygon';
 
 export default {
-  title: "Custom/SpinningPolygon",
+  title: 'Components/SpinningPolygon',
   component: SpinningPolygon,
-  parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: 'centered',
+  argTypes: {
+    polygonSides: {
+      control: { type: 'range', min: 3, max: 10, step: 1 },
+    },
+    color: { control: 'color' },
+    size: { control: { type: 'range', min: 50, max: 300, step: 10 } },
   },
-  args: {
-    size: 200,
-    polygonSides: 5,
-    color: 'red',
-  },
+} as Meta;
+
+const Template: StoryFn<SpinningPolygonProps> = (args) => (
+  <Box height="200vh" position="relative">
+    <Box position="fixed" top="50%" left="50%" transform="translate(-50%, -50%)">
+      <SpinningPolygon {...args} />
+    </Box>
+  </Box>
+);
+
+export const Solid = Template.bind({});
+Solid.args = {
+  polygonSides: 6,
+  color: '#ff0000',
+  size: 200,
 };
 
-export const Default = {
-    args: {
-      polygonSides: 5,
-    },
-  };
+export const Gradient = Template.bind({});
+Gradient.args = {
+  polygonSides: 8,
+  color: ['#ff0000', '#00ff00', '#0000ff'],
+  size: 250,
+};

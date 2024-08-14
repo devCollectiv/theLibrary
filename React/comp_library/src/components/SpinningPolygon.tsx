@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react';
 import React, { useEffect, useRef, useState } from 'react';
 
-interface SpinningPolygonProps {
+export interface SpinningPolygonProps {
   polygonSides: number;
   color: string | string[];
   size?: number;
