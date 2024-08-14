@@ -10,7 +10,7 @@ export default {
     polygonSides: {
       control: { type: 'range', min: 3, max: 10, step: 1 },
     },
-    color: { control: 'color' },
+    // color: { control: 'color' },
     size: { control: { type: 'range', min: 50, max: 300, step: 10 } },
   },
 } as Meta;
@@ -34,5 +34,5 @@ export const Gradient = Template.bind({});
 Gradient.args = {
   polygonSides: 8,
   color: ['#ff0000', '#00ff00', '#0000ff'],
-  size: 250,
+  size: 200,
 };
