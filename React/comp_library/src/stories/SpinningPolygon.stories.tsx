@@ -13,6 +13,7 @@ export default {
     // color: { control: 'color' },
     size: { control: { type: 'range', min: 50, max: 300, step: 10 } },
   },
+  tags: ['autodocs'],
 } as Meta;
 
 const Template: StoryFn<SpinningPolygonProps> = (args) => (
