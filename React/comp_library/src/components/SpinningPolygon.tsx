@@ -1,5 +1,5 @@
-import { Box } from '@chakra-ui/react';
-import React, { useEffect, useRef, useState } from 'react';
+import { Box } from "@chakra-ui/react";
+import React, { useEffect, useRef, useState } from "react";
 
 export interface SpinningPolygonProps {
   polygonSides: number;
@@ -7,18 +7,27 @@ export interface SpinningPolygonProps {
   size?: number;
 }
 
-const SpinningPolygon: React.FC<SpinningPolygonProps> = ({ polygonSides, color, size = 100 }) => {
+const SpinningPolygon: React.FC<SpinningPolygonProps> = ({
+  polygonSides,
+  color,
+  size = 100,
+}) => {
   const [rotation, setRotation] = useState(0);
   const polygonRef = useRef<SVGPolygonElement>(null);
+  /* jshint browser: true, strict: true, undef: true, unused: true */
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPercentage = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+      /* jshint validthis: true */
+
+      const scrollPercentage =
+        window.scrollY /
+        (document.documentElement.scrollHeight - window.innerHeight);
       setRotation(scrollPercentage * 360);
     };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    // Add event listener for scroll
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -30,7 +39,7 @@ const SpinningPolygon: React.FC<SpinningPolygonProps> = ({ polygonSides, color, 
         const y = size / 2 + (size / 2 - 10) * Math.sin(angle);
         points.push(`${x},${y}`);
       }
-      polygonRef.current.setAttribute('points', points.join(' '));
+      polygonRef.current.setAttribute("points", points.join(" "));
     }
   }, [polygonSides, size]);
 
@@ -50,7 +59,11 @@ const SpinningPolygon: React.FC<SpinningPolygonProps> = ({ polygonSides, color, 
           <defs>
             <linearGradient id={`gradient-${polygonSides}`}>
               {color.map((c, index) => (
-                <stop key={index} offset={`${(index / (color.length - 1)) * 100}%`} stopColor={c} />
+                <stop
+                  key={index}
+                  offset={`${(index / (color.length - 1)) * 100}%`}
+                  stopColor={c}
+                />
               ))}
             </linearGradient>
           </defs>

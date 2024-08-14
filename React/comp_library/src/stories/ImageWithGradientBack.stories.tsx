@@ -1,11 +1,11 @@
 import { Meta, StoryFn } from "@storybook/react";
 import React from "react";
 import ImageWIthGradientBacker, {
-  ImageWithGradientBackerProps,
+    ImageWithGradientBackerProps,
 } from "../components/ImageWithGradientBack";
 
 export default {
-  title: "Custom/RoundedImageWithGradient",
+  title: "components/RoundedImageWithGradient",
   component: ImageWIthGradientBacker,
 } as Meta;
 

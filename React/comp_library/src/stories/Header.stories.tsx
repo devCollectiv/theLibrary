@@ -2,7 +2,7 @@ import { fn } from '@storybook/test';
 import { Header } from '../components/Header';
 
 export default {
-  title: 'Custom/Header',
+  title: 'components/Header',
   component: Header,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],

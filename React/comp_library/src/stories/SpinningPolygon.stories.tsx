@@ -4,7 +4,7 @@ import React from 'react';
 import SpinningPolygon, { SpinningPolygonProps } from '../components/SpinningPolygon';
 
 export default {
-  title: 'Components/SpinningPolygon',
+  title: 'components/SpinningPolygon',
   component: SpinningPolygon,
   argTypes: {
     polygonSides: {
