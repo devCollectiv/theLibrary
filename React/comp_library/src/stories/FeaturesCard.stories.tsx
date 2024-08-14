@@ -25,7 +25,7 @@ Default.args = {
   description: 'We build modern, responsive, and user-friendly websites using the latest technologies.',
   icon: FaLaptopCode,
   features: ['React', 'Angular', 'Vue', 'Node.js', 'Express'],
-  image: 'https://picsum.photos/id/1018/300/200',
+  image: 'https://picsum.photos/300/200',
   cta: 'Get a Quote',
 };
 
@@ -35,7 +35,7 @@ Analytics.args = {
   description: 'We help businesses make data-driven decisions by analyzing and visualizing their data.',
   icon: FaChartLine,
   features: ['Python', 'R', 'SQL', 'Tableau', 'Power BI'],
-  image: 'https://picsum.photos/id/1025/300/200',
+  image: 'https://picsum.photos/300/200',
   cta: 'Learn More',
 };
 
@@ -45,6 +45,6 @@ DevOps.args = {
   description: 'We streamline software development and deployment processes with our DevOps expertise.',
   icon: FaRocket,
   features: ['CI/CD', 'Containerization', 'Kubernetes', 'Monitoring', 'Automation'],
-  image: 'https://picsum.photos/id/1037/300/200',
+  image: 'https://picsum.photos/300/200',
   cta: 'Get Started',
 };
