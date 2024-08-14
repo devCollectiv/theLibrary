@@ -14,7 +14,7 @@ const config = {
     name: "@storybook/react-webpack5",
     options: {},
   },
-  staticDirs: ["..\\public"],
+  // staticDirs: ["..\\public"],
   features: {
     emotionalAlias: false
   }
