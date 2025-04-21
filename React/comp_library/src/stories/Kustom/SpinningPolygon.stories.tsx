@@ -1,10 +1,10 @@
 import { Box } from '@chakra-ui/react';
 import { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
-import SpinningPolygon, { SpinningPolygonProps } from '../components/SpinningPolygon';
+import SpinningPolygon, { SpinningPolygonProps } from '../../components/SpinningPolygon';
 
 export default {
-  title: 'components/SpinningPolygon',
+  title: 'Kustom/components/SpinningPolygon',
   component: SpinningPolygon,
   argTypes: {
     polygonSides: {
