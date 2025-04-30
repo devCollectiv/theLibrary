@@ -1,11 +1,7 @@
-import { Box, Text, keyframes } from '@chakra-ui/react';
-import React, { useEffect, useState } from 'react';
+import { Box, keyframes, Text } from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
 
 export interface TypewriterTextProps {
-  /**
-   * Text to be typed out
-   */
-  text: string;
   /**
    * Array of texts to cycle through
    */
@@ -53,26 +49,22 @@ export interface TypewriterTextProps {
 }
 
 const TypewriterText: React.FC<TypewriterTextProps> = ({
-  text = '',
   textArray = [],
   typingSpeed = 100,
   deleteDelay = 1500,
   nextTextDelay = 500,
   loop = true,
-  fontSize = '2xl',
-  fontWeight = 'bold',
-  color = 'black',
-  cursorColor = 'black',
+  fontSize = "2xl",
+  fontWeight = "bold",
+  color = "black",
+  cursorColor = "black",
   showCursor = true,
-  cursorChar = '|',
+  cursorChar = "|",
 }) => {
-  const [displayText, setDisplayText] = useState('');
+  const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
-
-  // Use the single text or the array
-  const textsToType = textArray.length > 0 ? textArray : [text];
 
   // Blinking cursor animation
   const blink = keyframes`
@@ -84,50 +76,63 @@ const TypewriterText: React.FC<TypewriterTextProps> = ({
   useEffect(() => {
     if (isPaused) return;
 
-    const currentText = textsToType[currentIndex];
-    
-    const timeout = setTimeout(() => {
-      if (!isDeleting) {
-        // Typing
-        setDisplayText(currentText.substring(0, displayText.length + 1));
-        
-        // If we've typed the full text
-        if (displayText.length === currentText.length) {
-          // Only delete if we have more than one text or loop is enabled
-          if (textsToType.length > 1 || loop) {
+    const currentText = textArray[currentIndex];
+
+    const timeout = setTimeout(
+      () => {
+        if (!isDeleting) {
+          // Typing
+          setDisplayText(currentText.substring(0, displayText.length + 1));
+
+          // If we've typed the full text
+          if (displayText.length === currentText.length) {
+            // Only delete if we have more than one text or loop is enabled
+            if (textArray.length > 1 || loop) {
+              setIsPaused(true);
+              setTimeout(() => {
+                setIsDeleting(true);
+                setIsPaused(false);
+              }, deleteDelay);
+            }
+          }
+        } else {
+          // Deleting
+          setDisplayText(currentText.substring(0, displayText.length - 1));
+
+          // If we've deleted all text
+          if (displayText.length === 0) {
+            setIsDeleting(false);
+            setCurrentIndex((prevIndex) => {
+              // Move to next text or back to first if looping
+              if (prevIndex === textArray.length - 1) {
+                return loop ? 0 : prevIndex;
+              }
+              return prevIndex + 1;
+            });
+
+            // Pause before typing next text
             setIsPaused(true);
             setTimeout(() => {
-              setIsDeleting(true);
               setIsPaused(false);
-            }, deleteDelay);
+            }, nextTextDelay);
           }
         }
-      } else {
-        // Deleting
-        setDisplayText(currentText.substring(0, displayText.length - 1));
-        
-        // If we've deleted all text
-        if (displayText.length === 0) {
-          setIsDeleting(false);
-          setCurrentIndex((prevIndex) => {
-            // Move to next text or back to first if looping
-            if (prevIndex === textsToType.length - 1) {
-              return loop ? 0 : prevIndex;
-            }
-            return prevIndex + 1;
-          });
-          
-          // Pause before typing next text
-          setIsPaused(true);
-          setTimeout(() => {
-            setIsPaused(false);
-          }, nextTextDelay);
-        }
-      }
-    }, isDeleting ? typingSpeed / 2 : typingSpeed); // Delete faster than type
+      },
+      isDeleting ? typingSpeed / 2 : typingSpeed
+    ); // Delete faster than type
 
     return () => clearTimeout(timeout);
-  }, [displayText, currentIndex, isDeleting, isPaused, textsToType, typingSpeed, deleteDelay, nextTextDelay, loop]);
+  }, [
+    displayText,
+    currentIndex,
+    isDeleting,
+    isPaused,
+    textArray,
+    typingSpeed,
+    deleteDelay,
+    nextTextDelay,
+    loop,
+  ]);
 
   return (
     <Box display="inline-flex" alignItems="center">

@@ -84,7 +84,7 @@ const PulsatingCircle: React.FC<PulsatingCircleProps> = ({
   `;
 
   // Generate pulse rings
-  const pulseRings = Array.from({ length: pulseCount }).map((_, index) => {
+  const pulseRings = pulseCount && color && secondColor && Array.from({ length: pulseCount }).map((_, index) => {
     const delay = (index * pulseDuration) / pulseCount;
     
     return (

@@ -59,7 +59,7 @@ const FloatingBubbles: React.FC<FloatingBubblesProps> = ({
       const delay = Math.random() * 5; // Random delay for start
       const duration = Math.random() * (maxDuration - minDuration) + minDuration;
       const color = colors[index % colors.length];
-      
+
       // Create unique keyframe for each bubble with slight horizontal movement
       const floatUp = keyframes`
         0% {
@@ -90,7 +90,7 @@ const FloatingBubbles: React.FC<FloatingBubblesProps> = ({
       {bubbles.map((bubble) => (
         <Box
           key={bubble.id}
-          position="relative"
+          position="absolute"
           left={`${bubble.posX}px`}
           bottom={`-${bubble.size}px`}
           width={`${bubble.size}px`}

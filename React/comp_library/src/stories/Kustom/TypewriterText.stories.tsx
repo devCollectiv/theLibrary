@@ -59,7 +59,7 @@ const Template: StoryFn<TypewriterTextProps> = (args) => (
 
 export const SingleText = Template.bind({});
 SingleText.args = {
-  text: 'Welcome to devCollectiv',
+  textArray: ['Welcome to devCollectiv'],
   typingSpeed: 100,
   fontSize: '2xl',
   fontWeight: 'bold',

@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Heading, VStack } from '@chakra-ui/react';
 import { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 import AudioVisualizer, { AudioVisualizerProps } from '../../components/AudioVisualizer';
@@ -30,7 +30,7 @@ export default {
       control: 'boolean',
     },
     barCount: {
-      control: { type: 'range', min: 16, max: 128, step: 8 },
+      control: { type: 'range', min: 5, max: 15, step: 1 },
     },
     simulateAudio: {
       control: 'boolean',
@@ -56,6 +56,15 @@ export default {
     glow: {
       control: 'boolean',
     },
+    audioSrc: {
+      control: 'text',
+    },
+    loop: {
+      control: 'boolean',
+    },
+    autoPlay: {
+      control: 'boolean',
+    },
   },
 } as Meta;
 
@@ -73,7 +82,7 @@ BarVisualizer.args = {
   color: '#3182CE',
   secondaryColor: '#805AD5',
   useGradient: true,
-  barCount: 64,
+  barCount: 10,
   simulateAudio: true,
   simulationFrequency: 0.05,
   simulationAmplitude: 0.7,
@@ -90,7 +99,7 @@ WaveVisualizer.args = {
   visualizationType: 'wave',
   color: '#38A169',
   secondaryColor: '#D69E2E',
-  barCount: 96,
+  barCount: 12,
 };
 
 export const CircularVisualizer = Template.bind({});
@@ -100,7 +109,7 @@ CircularVisualizer.args = {
   color: '#D53F8C',
   secondaryColor: '#9F7AEA',
   height: 300,
-  barCount: 128,
+  barCount: 12,
   glow: true,
 };
 
@@ -111,7 +120,92 @@ ParticleVisualizer.args = {
   color: '#DD6B20',
   secondaryColor: '#3182CE',
   height: 300,
-  barCount: 48,
+  barCount: 8,
   simulationFrequency: 0.03,
   glow: true,
+};
+
+export const AudioFileVisualizer = Template.bind({});
+AudioFileVisualizer.args = {
+  width: 500,
+  height: 200,
+  visualizationType: 'bars',
+  color: '#E53E3E',
+  secondaryColor: '#F6AD55',
+  useGradient: true,
+  barCount: 10,
+  simulateAudio: false,
+  showControls: true,
+  mirror: true,
+  smooth: true,
+  sensitivity: 0.8,
+  glow: true,
+  audioSrc: '/audio/angry-siren.mp3',
+  loop: true,
+  autoPlay: true,
+};
+
+// Story that shows all visualizer types with the same audio file
+const AllVisualizersTemplate: StoryFn<AudioVisualizerProps> = (args) => (
+  <VStack spacing={8} align="stretch" p={4} borderRadius="md" boxShadow="md" bg="gray.50">
+    <Heading as="h2" size="md" textAlign="center">
+      Audio Visualizer Types with MP3 File
+    </Heading>
+
+    <Box>
+      <Heading as="h3" size="sm" mb={2}>Bars Visualization</Heading>
+      <AudioVisualizer
+        {...args}
+        visualizationType="bars"
+        color="#E53E3E"
+        secondaryColor="#F6AD55"
+      />
+    </Box>
+
+    <Box>
+      <Heading as="h3" size="sm" mb={2}>Wave Visualization</Heading>
+      <AudioVisualizer
+        {...args}
+        visualizationType="wave"
+        color="#38A169"
+        secondaryColor="#D69E2E"
+      />
+    </Box>
+
+    <Box>
+      <Heading as="h3" size="sm" mb={2}>Circular Visualization</Heading>
+      <AudioVisualizer
+        {...args}
+        visualizationType="circular"
+        color="#D53F8C"
+        secondaryColor="#9F7AEA"
+      />
+    </Box>
+
+    <Box>
+      <Heading as="h3" size="sm" mb={2}>Particles Visualization</Heading>
+      <AudioVisualizer
+        {...args}
+        visualizationType="particles"
+        color="#DD6B20"
+        secondaryColor="#3182CE"
+      />
+    </Box>
+  </VStack>
+);
+
+export const AllVisualizers = AllVisualizersTemplate.bind({});
+AllVisualizers.args = {
+  width: 500,
+  height: 200,
+  barCount: 10,
+  simulateAudio: false,
+  showControls: true,
+  mirror: true,
+  smooth: true,
+  sensitivity: 0.8,
+  glow: true,
+  audioSrc: '/audio/angry-siren.mp3',
+  loop: true,
+  autoPlay: false,
 };
