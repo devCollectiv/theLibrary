@@ -140,7 +140,7 @@ AudioFileVisualizer.args = {
   smooth: true,
   sensitivity: 0.8,
   glow: true,
-  audioSrc: '/audio/angry-siren.mp3',
+  audioSrc: process.env.PUBLIC_URL + '/audio/angry-siren.mp3',
   loop: true,
   autoPlay: true,
 };
@@ -205,7 +205,8 @@ AllVisualizers.args = {
   smooth: true,
   sensitivity: 0.8,
   glow: true,
-  audioSrc: '/audio/angry-siren.mp3',
+  audioSrc: process.env.PUBLIC_URL + '/audio/angry-siren.mp3',
   loop: true,
   autoPlay: false,
 };
+
