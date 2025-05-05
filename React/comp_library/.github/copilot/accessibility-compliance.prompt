@@ -1,0 +1,19 @@
+Review the selected UI code for accessibility compliance with WCAG standards.
+
+Check for:
+1. Proper semantic HTML elements
+2. ARIA attributes where appropriate
+3. Keyboard navigation support
+4. Screen reader compatibility
+5. Color contrast issues
+6. Text alternatives for non-text content
+7. Focus management
+8. Responsive design considerations
+
+For each issue found:
+1. Cite the relevant WCAG guideline (A, AA, or AAA level)
+2. Explain why it's an accessibility concern
+3. Provide corrected code examples
+4. Suggest testing approaches to verify the fix
+
+Include recommendations for accessibility testing tools relevant to the codebase.

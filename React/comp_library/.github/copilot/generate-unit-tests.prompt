@@ -1,0 +1,18 @@
+Generate comprehensive unit tests for the selected code following these guidelines:
+
+1. Create tests for normal operation, edge cases, and error conditions
+2. Follow the AAA pattern (Arrange, Act, Assert)
+3. Use descriptive test names that explain the test scenario and expected outcome
+4. Include mocking of dependencies where appropriate
+5. Aim for high code coverage (happy path, error paths, edge cases)
+6. Use the appropriate testing framework for the language/ecosystem
+
+Test frameworks to use based on language:
+- JavaScript/TypeScript: Jest or Mocha
+- Python: pytest
+- Java: JUnit
+- C#: xUnit or NUnit
+- Ruby: RSpec
+- Go: testing package
+
+Include setup and teardown logic where needed and add comments explaining test rationale for complex scenarios.

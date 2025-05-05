@@ -1,0 +1,19 @@
+Help design a clean, RESTful or GraphQL API for the functionality in the selected code.
+
+Consider:
+1. Resource modeling and relationships
+2. Endpoint structure and naming
+3. Request/response formats
+4. Query parameters and pagination
+5. Error handling and status codes
+6. Authentication and authorization requirements
+7. Versioning strategy
+8. Documentation format (OpenAPI/Swagger)
+
+Provide:
+- API specification in the appropriate format
+- Example requests and responses
+- Implementation guidance for the current codebase
+- Security considerations
+
+Ensure the API follows best practices for the chosen style (REST/GraphQL) and maintains backward compatibility where needed.

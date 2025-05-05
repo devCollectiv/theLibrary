@@ -1,0 +1,16 @@
+Refactor the selected code to improve quality while preserving functionality. Focus on:
+
+1. Reducing complexity (cognitive and cyclomatic)
+2. Improving readability and maintainability
+3. Applying appropriate design principles (SOLID, DRY, KISS)
+4. Breaking down large functions/methods
+5. Improving variable/function naming
+6. Removing code smells (magic numbers, deep nesting, etc.)
+
+For the refactored version:
+1. Maintain the original behavior and interfaces
+2. Add helpful comments explaining significant changes
+3. Highlight any potential edge cases that need testing
+4. Note any performance implications of the changes
+
+Present both the original and refactored code with explanations of key improvements.

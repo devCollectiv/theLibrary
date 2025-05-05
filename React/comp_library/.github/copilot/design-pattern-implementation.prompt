@@ -1,0 +1,12 @@
+Analyze the selected code and suggest appropriate design pattern implementations to improve its structure.
+
+1. Identify current architectural weaknesses or areas that could benefit from established patterns
+2. Recommend specific design patterns (Creational, Structural, Behavioral) that address these issues
+3. Provide example refactored code implementing the suggested pattern(s)
+4. Explain the benefits of the pattern implementation including:
+   - Improved maintainability
+   - Better testability
+   - Enhanced extensibility
+   - Reduced complexity
+
+For each suggestion, explain why this pattern is appropriate for this specific context and provide both before/after comparisons to illustrate the improvement.

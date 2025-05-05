@@ -1,0 +1,17 @@
+Analyze the selected code for performance optimizations with these considerations:
+
+1. Algorithmic efficiency (time and space complexity)
+2. Resource usage (memory, CPU, network, disk I/O)
+3. Caching opportunities
+4. Unnecessary computations or operations
+5. Data structure selection and usage
+6. Asynchronous or parallel processing opportunities
+7. Language-specific optimizations
+
+For each identified issue:
+1. Explain the performance impact
+2. Provide optimized alternative code
+3. Quantify the expected improvement (if possible)
+4. Note any tradeoffs (readability, maintainability, etc.)
+
+Focus on optimizations with the greatest impact first, and ensure suggestions maintain correctness and readability.

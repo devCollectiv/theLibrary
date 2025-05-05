@@ -1,0 +1,18 @@
+Generate comprehensive documentation for the selected code including:
+
+1. Function/class purpose and overview
+2. Detailed parameter descriptions with types and constraints
+3. Return value explanation
+4. Usage examples with expected outputs
+5. Edge cases and error handling behavior
+6. Any dependencies or prerequisites
+7. Performance characteristics and complexity (time/space)
+
+Format the documentation in the appropriate style for the language:
+- JSDoc for JavaScript/TypeScript
+- DocString for Python
+- JavaDoc for Java
+- XML comments for C#
+- etc.
+
+Include appropriate markdown formatting and ensure documentation is clear enough for both new developers and experienced maintainers.

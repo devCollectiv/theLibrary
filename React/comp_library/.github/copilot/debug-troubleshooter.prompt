@@ -1,0 +1,14 @@
+Help troubleshoot the selected code that's exhibiting unexpected behavior.
+
+Based on the code and any error messages/symptoms described:
+
+1. Identify potential causes of the issue
+2. Suggest specific debugging approaches including:
+   - Helpful log statements to add
+   - Conditions to check
+   - Edge cases to test
+   - Potential race conditions or timing issues
+3. Recommend specific tools or techniques relevant to the language/framework
+4. Provide potential fixes for the most likely causes
+
+If relevant, suggest debugging configurations, breakpoints, or watch expressions that would help isolate the problem.

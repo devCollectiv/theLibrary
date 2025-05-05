@@ -140,14 +140,26 @@ const AudioVisualizer: React.FC<AudioVisualizerProps> = ({
     }
 
     return () => {
+      // Cleanup audio resources
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
 
-      if (
-        audioContextRef.current &&
-        audioContextRef.current.state !== "closed"
-      ) {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.src = "";
+        audioRef.current = null;
+      }
+
+      if (sourceRef.current) {
+        sourceRef.current.disconnect();
+      }
+
+      if (analyserRef.current) {
+        analyserRef.current.disconnect();
+      }
+
+      if (audioContextRef.current && audioContextRef.current.state !== "closed") {
         audioContextRef.current.close();
       }
     };
@@ -162,52 +174,74 @@ const AudioVisualizer: React.FC<AudioVisualizerProps> = ({
       audioRef.current = new Audio();
       audioRef.current.src = audioSrc;
       audioRef.current.loop = loop;
-      audioRef.current.crossOrigin = "anonymous"; // For CORS support
+      audioRef.current.crossOrigin = "anonymous";
 
-      // Connect audio element to analyzer
-      const source = audioContextRef.current.createMediaElementSource(
-        audioRef.current
-      );
-      source.connect(analyserRef.current);
-      analyserRef.current.connect(audioContextRef.current.destination); // Connect to speakers
+      // Resume audio context on user interaction
+      const resumeAudioContext = () => {
+        if (audioContextRef.current?.state === "suspended") {
+          audioContextRef.current.resume();
+        }
+      };
 
-      sourceRef.current = source;
+      audioRef.current.addEventListener("play", () => {
+        resumeAudioContext();
+        setIsPlaying(true);
+      });
 
-      // Set up event listeners
-      audioRef.current.addEventListener("play", () => setIsPlaying(true));
       audioRef.current.addEventListener("pause", () => setIsPlaying(false));
       audioRef.current.addEventListener("ended", () => {
         if (!loop) setIsPlaying(false);
       });
+      audioRef.current.addEventListener("error", (e) => {
+        console.error("Audio loading error:", e);
+        setIsPlaying(false);
+      });
 
-      // Autoplay if enabled
-      if (autoPlay) {
-        audioRef.current.play().catch((err) => {
-          console.error("Error autoplaying audio:", err);
-        });
+      // Connect audio element to analyzer
+      try {
+        const source = audioContextRef.current.createMediaElementSource(
+          audioRef.current
+        );
+        source.connect(analyserRef.current);
+        analyserRef.current.connect(audioContextRef.current.destination);
+        sourceRef.current = source;
+
+        // Autoplay if enabled
+        if (autoPlay) {
+          audioRef.current.play().catch((err) => {
+            console.error("Error autoplaying audio:", err);
+          });
+        }
+      } catch (err) {
+        console.error("Error setting up audio:", err);
       }
     }
   };
 
   // Toggle audio playback
-  const toggleAudio = () => {
+  const toggleAudio = async () => {
     if (!audioRef.current) return;
 
-    if (isPlaying) {
-      audioRef.current.pause();
-
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-        animationRef.current = null;
+    try {
+      if (isPlaying) {
+        audioRef.current.pause();
+        if (animationRef.current) {
+          cancelAnimationFrame(animationRef.current);
+          animationRef.current = null;
+        }
+      } else {
+        // Resume audio context if suspended
+        if (audioContextRef.current?.state === "suspended") {
+          await audioContextRef.current.resume();
+        }
+        
+        await audioRef.current.play();
+        if (!animationRef.current) {
+          animationRef.current = requestAnimationFrame(visualize);
+        }
       }
-    } else {
-      audioRef.current.play().catch((err) => {
-        console.error("Error playing audio:", err);
-      });
-
-      if (!animationRef.current) {
-        animationRef.current = requestAnimationFrame(visualize);
-      }
+    } catch (err) {
+      console.error("Error toggling audio:", err);
     }
   };
 
