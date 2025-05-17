@@ -1,12 +1,14 @@
 import { Meta, StoryFn } from "@storybook/react";
 import React from "react";
 import ImageWIthGradientBacker, {
-  ImageWithGradientBackerProps
-} from "../../components/ImageWithGradientBack";
+  ImageWithGradientBackerProps,
+} from "../components/ImageWithGradientBack";
 
 export default {
   title: "Kustom/components/RoundedImageWithGradient",
   component: ImageWIthGradientBacker,
+  tags: ['autodocs'],
+
 } as Meta;
 
 const Template: StoryFn<ImageWithGradientBackerProps> = (args) => (
